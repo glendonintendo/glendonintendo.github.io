@@ -148,6 +148,10 @@ header a:hover {
 .project p {
 	color: var(--secondary-color);
 	font-weight: bold;
+	font-size: 1rem;
+}
+
+.project a:first-child {
 	font-size: 1.5rem;
 }
 

@@ -46,12 +46,19 @@ function Portfolio() {
 		}
 	];
 
+	const formatLink = (githubUrl) => {
+		return githubUrl.split('/').slice(3).join('/');
+	}
 
 	return (
 		<div className='flex-projects'>
 			{projects.map((project, i) => (
 				<article className='project' key={i}>
-					<p><a className='italic-hover' href={project.deployedUrl}>{project.title}</a> - <a className='italic-hover' href={project.githubUrl}>source code</a></p>
+					<p>
+						<a className='italic-hover' href={project.deployedUrl} target='_blank'>{project.title}</a>
+						<br />
+						Source code: <a className='italic-hover' href={project.githubUrl} target='_blank'>{formatLink(project.githubUrl)}</a>
+					</p>
 					<a href={project.deployedUrl}>
 						<img 
 							className='project-pic' 
