@@ -8,6 +8,14 @@ My personal website is a digital portfolio of the work I have accomplished since
 
 Through this website users can learn a little bit about me, view my recent works, contact me through an email form, and view my resume and technological proficiencies.
 
+![about page](readme-about.png)
+
+![portfolio page](readme-portfolio.png)
+
+![contact page](readme-contact.png)
+
+![resume page](readme-resume.png)
+
 ## Technologies Used
 Languages: HTML, CSS, JavaScript
 Frameworks: React
