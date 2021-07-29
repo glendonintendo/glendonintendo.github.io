@@ -1,28 +1,37 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink } from "react-router-dom";
+import { Flex, Box, Button, Stack, useColorMode } from "@chakra-ui/react";
 
 function Nav() {
-	const checkActive = (match, location) => {
-		if (location.pathname !== '/portfolio' && location.pathname !== '/contact' && location.pathname !== '/resume') {
-			return true;
-		}
-		
-		return false;
-	};
-	
-	return (
-		<header>
-			<h1><Link to='/'>#glen</Link></h1>
-			<nav>
-				<ul>
-					<li><NavLink to='/about' activeClassName='nav-selected' isActive={checkActive}>.about</NavLink></li>
-					<li><NavLink to='/portfolio' activeClassName='nav-selected'>.portfolio</NavLink></li>
-					<li><NavLink to='/contact' activeClassName='nav-selected'>.contact</NavLink></li>
-					<li><NavLink to='/resume' activeClassName='nav-selected'>.resume</NavLink></li>
-				</ul>
-			</nav>
-		</header>
-	);
-};
+  const { toggleColorMode } = useColorMode();
+
+  return (
+    <Flex w="100vw" align="center" justify="space-around" h="10vh">
+      <Button bg="transparent" onClick={toggleColorMode}>
+        #glen
+      </Button>
+
+      <Stack
+        justify="center"
+        align="center"
+        isInline
+        spacing={[2, 4, 8, 20]}
+        fontSize={["16px", "20px", "24px"]}
+      >
+        <Box>
+          <Link to="/about">.about</Link>
+        </Box>
+        <Box>
+          <Link to="/portfolio">.portfolio</Link>
+        </Box>
+        <Box>
+          <Link to="/contact">.contact</Link>
+        </Box>
+        <Box>
+          <Link to="/resume">.resume</Link>
+        </Box>
+      </Stack>
+    </Flex>
+  );
+}
 
 export default Nav;
