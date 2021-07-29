@@ -1,98 +1,122 @@
-import React, { useState } from 'react';
-import { validateEmail } from '../../utils/helpers';
+import {
+  IoPhonePortraitOutline,
+  IoMail,
+  IoInformationCircle,
+} from "react-icons/io5";
+import {
+  Flex,
+  Box,
+  Text,
+  Stack,
+  FormControl,
+  FormHelperText,
+  InputGroup,
+  InputLeftElement,
+  Icon,
+  Input,
+  Button,
+  Textarea,
+  useColorMode,
+  FormLabel,
+} from "@chakra-ui/react";
 
-function Contact() {
-	const [formState, setFormState] = useState({ name: '', email: '', message: ''});
-	const { name, email, message } = formState;
+const Contact = () => {
+  const handleFormSubmit = () => {};
 
-	const [errorMessage, setErrorMessage] = useState('');
-	
-	function handleSubmit(e) {
-		e.preventDefault();
-		if (formState.name && formState.email && validateEmail(formState.email)) {
-			console.log(formState);
-			setFormState({ name: '', email: '', message:''});
-			setErrorMessage('Email successfully sent. I will get back to you as soon as possible!')
-		}
-	}
+  const handleChange = () => {};
 
-	function handleBlur(e) {
-		if (e.target.name === 'email') {
-			const isValid = validateEmail(e.target.value);
-			if (!isValid) {
-				setErrorMessage('Your email is invalid');
-			} else {
-				setErrorMessage('');
-			}
-		} else {
-			if (!e.target.value.length) {
-				setErrorMessage(`Your ${e.target.name} is required.`);
-			} else {
-				setErrorMessage('');
-			}
-		}
+  const { colorMode } = useColorMode();
+  const inputBorder = { light: "gray.500", dark: "gray.200" };
+  const bgColor = { light: "gray.200", dark: "gray.700" };
 
-		if (!errorMessage) {
-			setFormState({ ...formState, [e.target.name]: e.target.value });
-		}
-	}
+  return (
+    <Flex justify="center" mt="10vh">
+      <Box
+        bg={bgColor[colorMode]}
+        w={["80vw", "60vw", "60vw", "30vw"]}
+        rounded="lg"
+      >
+        <Text as="h2" align="center" my="10px" fontSize="2xl" fontWeight="bold">
+          Contact Me
+        </Text>
+        <form onSubmit={handleFormSubmit}>
+          <Stack spacing={3} width="90%" mx="auto" my="10px">
+            <FormControl id="name" isRequired>
+              <FormLabel>Name:</FormLabel>
+              <InputGroup borderColor={inputBorder[colorMode]}>
+                <InputLeftElement
+                  children={<Icon as={IoInformationCircle} />}
+                />
+                <Input
+                  type="name"
+                  placeholder="Name"
+                  aria-label="Name"
+                  name="name"
+                  onChange={handleChange}
+                />
+              </InputGroup>
+            </FormControl>
+            <FormControl id="email" isRequired>
+              <FormLabel>Email:</FormLabel>
+              <InputGroup borderColor={inputBorder[colorMode]}>
+                <InputLeftElement children={<Icon as={IoMail} />} />
+                <Input
+                  type="email"
+                  placeholder="Email"
+                  aria-label="Email"
+                  name="email"
+                  onChange={handleChange}
+                />
+              </InputGroup>
+            </FormControl>
+            <FormControl>
+              <FormLabel>Phone:</FormLabel>
+              <InputGroup borderColor={inputBorder[colorMode]}>
+                <InputLeftElement
+                  children={<Icon as={IoPhonePortraitOutline} />}
+                />
+                <Input
+                  type="tel"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  placeholder="XXX-XXX-XXXX"
+                  aria-label="Phone number"
+                  name="phone"
+                  onChange={handleChange}
+                />
+              </InputGroup>
+            </FormControl>
+            <FormControl isRequired>
+              <FormLabel>Email Body:</FormLabel>
+              <InputGroup borderColor={inputBorder[colorMode]}>
+                <Textarea
+                  placeholder="Type you email text here."
+                  aria-label="Email body"
+                  name="body"
+                  onChange={handleChange}
+                  rows={8}
+                />
+              </InputGroup>
+              <FormHelperText>
+                If you are interested in hiring me and/or working together,
+                please use this form to send me a short email. I will contact
+                you with 24 hours of your initial query. Your email will only be
+                used to respond to your original query.
+              </FormHelperText>
+            </FormControl>
 
-	function handleChange(e) {
-		setFormState({ ...formState, [e.target.name]: e.target.value })
-	}
-
-	return (
-		<section className='contact'>
-			<form id='contact-form' onSubmit={handleSubmit}>
-				<div>
-					<label htmlFor='name'>Name:</label>
-					<input 
-						type='text'
-						name='name'
-						placeholder='Your name'
-						id='form-name'
-						value={name}
-						onChange={handleChange}
-						onBlur={handleBlur}
-					/>
-				</div>
-
-				<div>
-					<label htmlFor='email'>Email Address:</label>
-					<input 
-						type='email'
-						name='email'
-						placeholder='Your email'
-						id='form-email'
-						value={email}
-						onChange={handleChange}
-						onBlur={handleBlur}
-					/>
-				</div>
-
-				<div>
-					<label htmlFor='message'>Message:</label>
-					<textarea 
-						name='message'
-						placeholder='Your message'
-						id='form-message'
-						rows='5'
-						value={message}
-						onChange={handleChange}
-						onBlur={handleBlur}
-					/>
-				</div>
-
-				{errorMessage && (
-					<div>
-						<p className='error-text'>{errorMessage}</p>
-					</div>
-				)}
-
-				<button type='submit'>Submit</button>
-			</form>
-		</section>
-	)
-}
+            <Button
+              type="submit"
+              boxShadow="sm"
+              _hover={{ boxShadow: "md" }}
+              _active={{ boxShadow: "lg" }}
+            >
+              Send it!
+            </Button>
+          </Stack>
+        </form>
+      </Box>
+    </Flex>
+  );
+};
 
 export default Contact;
