@@ -5,7 +5,7 @@ function Resume() {
 		<section className='resume'>
 			<div className='resume-link'>
 				<p>For a full list of my skills, proficiencies, and experience take a look at my resume.</p>
-				<a href={require('../../assets/web-dev-resume.pdf')?.default} target='_blank'>Click here to download!</a>
+				<a href={require('../../assets/web-dev-resume.pdf')?.default} target='_blank' rel="noreferrer">Click here to download!</a>
 			</div>
 			
 			<div className='proficiencies'>
