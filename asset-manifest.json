@@ -1,17 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.e4891314.chunk.css",
-    "main.js": "/static/js/main.56d6e3c7.chunk.js",
-    "main.js.map": "/static/js/main.56d6e3c7.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.848a3a78.js",
-    "runtime-main.js.map": "/static/js/runtime-main.848a3a78.js.map",
-    "static/js/2.49c3a303.chunk.js": "/static/js/2.49c3a303.chunk.js",
-    "static/js/2.49c3a303.chunk.js.map": "/static/js/2.49c3a303.chunk.js.map",
-    "static/js/3.9a465a9b.chunk.js": "/static/js/3.9a465a9b.chunk.js",
-    "static/js/3.9a465a9b.chunk.js.map": "/static/js/3.9a465a9b.chunk.js.map",
+    "main.js": "/static/js/main.639f5d2c.chunk.js",
+    "main.js.map": "/static/js/main.639f5d2c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.45fd4047.js",
+    "runtime-main.js.map": "/static/js/runtime-main.45fd4047.js.map",
+    "static/js/2.897a10f7.chunk.js": "/static/js/2.897a10f7.chunk.js",
+    "static/js/2.897a10f7.chunk.js.map": "/static/js/2.897a10f7.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.e4891314.chunk.css.map": "/static/css/main.e4891314.chunk.css.map",
-    "static/js/2.49c3a303.chunk.js.LICENSE.txt": "/static/js/2.49c3a303.chunk.js.LICENSE.txt",
+    "static/js/2.897a10f7.chunk.js.LICENSE.txt": "/static/js/2.897a10f7.chunk.js.LICENSE.txt",
     "static/media/budget-tracker.png": "/static/media/budget-tracker.4d754470.png",
     "static/media/deep-thoughts-homepage.png": "/static/media/deep-thoughts-homepage.af850077.png",
     "static/media/music-market.png": "/static/media/music-market.c69acdbf.png",
@@ -19,13 +15,14 @@
     "static/media/note-taker.png": "/static/media/note-taker.a53e2f48.png",
     "static/media/pizza-hunt.png": "/static/media/pizza-hunt.f2a26832.png",
     "static/media/profile-pic.jpg": "/static/media/profile-pic.3dbf94fa.jpg",
+    "static/media/shop-shop.png": "/static/media/shop-shop.9bda567f.png",
+    "static/media/sorting-visualizer.png": "/static/media/sorting-visualizer.6099caa2.png",
     "static/media/tech-blog-dashboard.png": "/static/media/tech-blog-dashboard.5df6ca55.png",
-    "static/media/web-dev-resume.pdf": "/static/media/web-dev-resume.62eab8fd.pdf"
+    "static/media/web-dev-resume.pdf": "/static/media/web-dev-resume.e6fc3978.pdf"
   },
   "entrypoints": [
-    "static/js/runtime-main.848a3a78.js",
-    "static/js/2.49c3a303.chunk.js",
-    "static/css/main.e4891314.chunk.css",
-    "static/js/main.56d6e3c7.chunk.js"
+    "static/js/runtime-main.45fd4047.js",
+    "static/js/2.897a10f7.chunk.js",
+    "static/js/main.639f5d2c.chunk.js"
   ]
 }
