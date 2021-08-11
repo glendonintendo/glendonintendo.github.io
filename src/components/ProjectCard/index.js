@@ -1,5 +1,6 @@
 import {
   Box,
+  Flex,
   Image,
   Badge,
   Text,
@@ -52,7 +53,7 @@ function ProjectCard({
           {description}
         </Text>
 
-        <Box textAlign="center">
+        <Flex justify="space-around">
           <LinkBox>
             <LinkOverlay href={githubUrl} isExternal />
             GitHub Repo
@@ -61,7 +62,7 @@ function ProjectCard({
             <LinkOverlay href={deployedUrl} isExternal />
             Deployed App
           </LinkBox>
-        </Box>
+        </Flex>
       </Box>
     </Box>
   );
