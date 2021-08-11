@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Flex, Box, Button, Stack, useColorMode } from "@chakra-ui/react";
 
 function Nav() {
@@ -6,7 +6,12 @@ function Nav() {
 
   return (
     <Flex w="100vw" align="center" justify="space-around" h="10vh">
-      <Button bg="transparent" onClick={toggleColorMode}>
+      <Button
+        bg="transparent"
+        fontSize={["16px", "20px", "24px"]}
+        fontWeight="bold"
+        onClick={toggleColorMode}
+      >
         #glen
       </Button>
 

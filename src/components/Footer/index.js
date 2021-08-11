@@ -1,5 +1,5 @@
 import { Flex, Box, Text, LinkBox, LinkOverlay, Icon } from "@chakra-ui/react";
-import { FaInstagram, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function Footer() {
   const media = [
@@ -17,11 +17,13 @@ function Footer() {
 
   return (
     <>
-      <Flex w="100vw" padding="5vw 0" justify="center" wrap="wrap">
-        <Text w="100vw" align="center">Want to Connect?</Text>
-        <Flex justify="space-around">
+      <Box w="100vw" padding="5vw 0 2vw 0">
+        <Text w="100vw" align="center" fontWeight="semibold" fontSize="24px">
+          Want to Connect?
+        </Text>
+        <Flex justify="center" fontSize="20px" w="60%" mx="auto">
           {media.map((medium, i) => (
-            <LinkBox>
+            <LinkBox mx="20px">
               <Icon as={medium.icon}></Icon>
               <LinkOverlay href={medium.url} isExternal>
                 {medium.label}
@@ -29,7 +31,7 @@ function Footer() {
             </LinkBox>
           ))}
         </Flex>
-      </Flex>
+      </Box>
 
       <Flex as="footer" h="5vw" align="center" justify="center">
         <Text>Created and developed with ❤️ by Glen Eggers</Text>

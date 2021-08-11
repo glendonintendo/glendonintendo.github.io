@@ -9,50 +9,52 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 
-function ProjectCard({ title, deployedUrl, githubUrl, image }) {
+function ProjectCard({
+  title,
+  deployedUrl,
+  githubUrl,
+  image,
+  description,
+  badges,
+}) {
   const { colorMode } = useColorMode();
   const bgColor = { light: "gray.200", dark: "gray.700" };
 
   return (
     <Box
       w="400px"
-      rounded="20px"
+      rounded="5px"
       overflow="hidden"
       boxShadow="sm"
       bg={bgColor[colorMode]}
+      my="20px"
     >
       <Image
         src={require(`../../assets/${image}`)?.default}
-        alt="Course Cover"
+        alt={title}
+        objectFit="cover"
+        objectPosition="50% 0%"
+        h="200px"
+        w="100%"
       />
       <Box p={5}>
         <Stack isInline align="baseline">
-          <Badge variant="solid" variantColor="teal" rounded="full" px={2}>
-            React
-          </Badge>
-          <Badge variant="solid" variantColor="teal" rounded="full" px={2}>
-            Chakra UI
-          </Badge>
+          {badges.map((badge) => (
+            <Badge variant="solid" variantColor="teal" rounded="full" px={2}>
+              {badge}
+            </Badge>
+          ))}
         </Stack>
         <Text as="h2" fontWeight="semibold" fontSize="xl" my={2}>
           {title}
         </Text>
-        <Text isTruncated fontWeight="light" fontSize="md">
-          Adipisicing ea pariatur ullamco deserunt amet
-          <br /> consequat reprehenderit in duis est velit tempor.
-          <br /> Ipsum ea ad duis sint aliquip in ullamco in dolor <br />
-          reprehenderit duis ullamco. Irure tempor ullamco voluptate irure quis
-          quis magna sint enim velit esse. Culpa excepteur reprehenderit sint ex
-          incididunt reprehenderit deserunt nisi ullamco magna. Officia eiusmod
-          ipsum laboris enim irure eu elit. Labore ex esse pariatur aliquip
-          proident ipsum deserunt culpa eiusmod elit reprehenderit labore
-          commodo pariatur. Consequat duis velit proident qui ad elit mollit
-          culpa veniam.
+        <Text noOfLines={4} fontWeight="light" fontSize="md">
+          {description}
         </Text>
 
         <Box textAlign="center">
           <LinkBox>
-          <LinkOverlay href={githubUrl} isExternal />
+            <LinkOverlay href={githubUrl} isExternal />
             GitHub Repo
           </LinkBox>
           <LinkBox>
