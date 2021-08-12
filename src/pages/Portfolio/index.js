@@ -1,4 +1,4 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex, Grid } from "@chakra-ui/react";
 
 import ProjectCard from "../../components/ProjectCard";
 
@@ -45,8 +45,9 @@ function Portfolio() {
       deployedUrl: "https://warm-thicket-03703.herokuapp.com/",
       githubUrl: "https://github.com/glendonintendo/budget-tracker",
       image: "budget-tracker.png",
-      badges: ["MongoDB"],
-      description: "",
+      badges: ["MongoDB", "IndexedDB", "PWA"],
+      description:
+        "A budget visualizer application for all your financial planning needs! The Budget Tracker utilizes IndexedDB and MongoDB to provide online and offline persistence of your budget data. It also is downloadable as a desktop or phone application so you can budget on the go and at your convenience.",
     },
     {
       title: "Note Taker",
@@ -54,7 +55,8 @@ function Portfolio() {
       githubUrl: "https://github.com/glendonintendo/note-taker",
       image: "note-taker.png",
       badges: ["JavaScript", "Jest", "Bootstrap"],
-      description: "",
+      description:
+        "Note Taker is, simply put, a web application for you to take notes. No need to worry about losing where you left off; Note Taker has data persistence so you can take notes and rest assured will be able to find them when you need them.",
     },
     {
       title: "Tech Blog",
@@ -62,15 +64,8 @@ function Portfolio() {
       githubUrl: "https://github.com/glendonintendo/tech-blog",
       image: "tech-blog-dashboard.png",
       badges: ["Handlebars", "SQL", "Jest"],
-      description: "",
-    },
-    {
-      title: "Pizza Hunt",
-      deployedUrl: "https://young-hollows-44139.herokuapp.com/",
-      githubUrl: "https://github.com/glendonintendo/pizza-hunt",
-      image: "pizza-hunt.png",
-      badges: ["MongoDB", "IndexedDB"],
-      description: "",
+      description:
+        "Tech Blog is a application for techies to connect and share tech related content. Users can create posts, edit and delete their own posts, and respond to posts. It is a one-stop-shop for all your tech news.",
     },
     {
       title: "National Park Finder",
@@ -78,12 +73,13 @@ function Portfolio() {
       githubUrl: "https://github.com/glendonintendo/national-park-finder",
       image: "national-park-finder.png",
       badges: ["JavaScipt", "jQuery", "MomentJS"],
-      description: "",
+      description:
+        "Want to experience the most amazing parks in the United States? The National Park Finder tool can help you plan your next trip by helping you search for National Parks and updating you with relevant information for the parks you are interested in.",
     },
   ];
 
   return (
-    <Flex wrap="wrap" justify="space-around" w="90%" mx="auto">
+    <Grid templateColumns="repeat(3, 1fr)" mx="auto" w="90%" gap="25px">
       {projects.map((project) => (
         <ProjectCard
           title={project.title}
@@ -95,7 +91,7 @@ function Portfolio() {
           badges={project.badges}
         ></ProjectCard>
       ))}
-    </Flex>
+    </Grid>
   );
 }
 

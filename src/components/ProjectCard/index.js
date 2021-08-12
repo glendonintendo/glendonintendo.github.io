@@ -23,12 +23,10 @@ function ProjectCard({
 
   return (
     <Box
-      w="400px"
       rounded="5px"
       overflow="hidden"
       boxShadow="sm"
       bg={bgColor[colorMode]}
-      my="20px"
     >
       <Image
         src={require(`../../assets/${image}`)?.default}
