@@ -28,9 +28,9 @@ function Nav() {
         <Box>
           <Link to="/portfolio">.portfolio</Link>
         </Box>
-        <Box>
+        {/* <Box>
           <Link to="/contact">.contact</Link>
-        </Box>
+        </Box> */}
         <Box>
           <Link to="/resume">.resume</Link>
         </Box>

@@ -1,4 +1,4 @@
-import { Flex, Grid } from "@chakra-ui/react";
+import { Grid } from "@chakra-ui/react";
 
 import ProjectCard from "../../components/ProjectCard";
 

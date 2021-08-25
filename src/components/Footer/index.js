@@ -17,8 +17,8 @@ function Footer() {
 
   return (
     <>
-      <Box w="100vw" padding="5vw 0 2vw 0">
-        <Text w="100vw" align="center" fontWeight="semibold" fontSize="24px">
+      <Box w="100vw" padding="2vw 0 2vw 0">
+        <Text w="100vw" align="center" fontWeight="bold" fontSize="24px">
           Want to Connect?
         </Text>
         <Flex justify="center" fontSize="20px" w="60%" mx="auto">
@@ -33,7 +33,7 @@ function Footer() {
         </Flex>
       </Box>
 
-      <Flex as="footer" h="5vw" align="center" justify="center">
+      <Flex as="footer" h="2.5vw" align="center" justify="center">
         <Text>Created and developed with ❤️ by Glen Eggers</Text>
       </Flex>
     </>
