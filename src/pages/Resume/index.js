@@ -24,13 +24,20 @@ function Resume() {
         <Text as="h2" fontWeight="semibold">
           Frameworks
         </Text>
-        <Text>MongoDB, Express, Node, React, Jest</Text>
+        <Text>MongoDB, Express, Node, React, Next, Jest</Text>
         <Text as="h2" fontWeight="semibold">
           Other Tools
         </Text>
         <Text>
-          MySQL, jQuery, Bootstrap, UIKit, Foundations, Git (Github),
-          Handlebars, Webpack, RESTful and non-RESTful APIs
+          MySQL, jQuery, Bootstrap, ChakraUI, Foundations, Git (Github),
+          Handlebars, Webpack, Redux, GitHub, Heroku, JSON,
+        </Text>
+        <Text as="h2" fontWeight="semibold">
+          Paradigms
+        </Text>
+        <Text>
+          RESTful and non-RESTful APIs, Object-Oriented Programming, Test-Driven
+          Development, UX/UI
         </Text>
       </Stack>
     </Flex>
