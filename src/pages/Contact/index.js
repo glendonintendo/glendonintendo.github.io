@@ -1,3 +1,5 @@
+import { useState } from "react";
+import emailjs from "emailjs-com";
 import {
   IoPhonePortraitOutline,
   IoMail,
@@ -17,12 +19,76 @@ import {
   Textarea,
   useColorMode,
   FormLabel,
+  useToast,
 } from "@chakra-ui/react";
 
 const Contact = () => {
-  const handleFormSubmit = () => {};
+  let [formName, setName] = useState("");
+  let [formEmail, setEmail] = useState("");
+  let [formPhone, setPhone] = useState("");
+  let [formSubject, setSubject] = useState("");
+  let [formBody, setFormBody] = useState("");
+  const toast = useToast();
 
-  const handleChange = () => {};
+  const handleChange = (e) => {
+    switch (e.target.name) {
+      case "name":
+        setName(e.target.value);
+        break;
+      case "email":
+        setEmail(e.target.value);
+        break;
+      case "phone":
+        setPhone(e.target.value);
+        break;
+      case "subject":
+        setSubject(e.target.value);
+        break;
+      case "body":
+        setFormBody(e.target.value);
+        break;
+      default:
+        break;
+    }
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_02btztc",
+        "template_f119yjc",
+        e.target,
+        "user_cHlubb8PuipOBxZ6qcpcx"
+      )
+      .then(
+        () => {
+          toast({
+            title: "Email successfully sent",
+            description: "I will respond to your email within 24 hours.",
+            status: "success",
+            isClosable: true,
+            position: "top",
+          });
+
+          setName("");
+          setEmail("");
+          setPhone("");
+          setSubject("");
+          setFormBody("");
+        },
+        (error) => {
+          toast({
+            title: "Something went wrong",
+            description: error.text,
+            status: "error",
+            isClosable: true,
+            position: "top",
+          });
+        }
+      );
+  };
 
   const { colorMode } = useColorMode();
   const inputBorder = { light: "gray.500", dark: "gray.200" };
@@ -52,6 +118,7 @@ const Contact = () => {
                     placeholder="Name"
                     aria-label="Name"
                     name="name"
+                    value={formName}
                     onChange={handleChange}
                   />
                 </InputGroup>
@@ -65,6 +132,7 @@ const Contact = () => {
                     placeholder="Email"
                     aria-label="Email"
                     name="email"
+                    value={formEmail}
                     onChange={handleChange}
                   />
                 </InputGroup>
@@ -81,6 +149,7 @@ const Contact = () => {
                     placeholder="XXX-XXX-XXXX"
                     aria-label="Phone number"
                     name="phone"
+                    value={formPhone}
                     onChange={handleChange}
                   />
                 </InputGroup>
@@ -88,14 +157,29 @@ const Contact = () => {
             </Stack>
             <Stack spacing={3} width="50%" mx="auto" my="10px">
               <FormControl isRequired>
+                <FormLabel>Subject:</FormLabel>
+                <InputGroup borderColor={inputBorder[colorMode]}>
+                  <Input
+                    type="text"
+                    placeholder="Subject"
+                    aria-label="Email subject line"
+                    name="subject"
+                    value={formSubject}
+                    onChange={handleChange}
+                  />
+                </InputGroup>
+              </FormControl>
+
+              <FormControl isRequired>
                 <FormLabel>Email Body:</FormLabel>
                 <InputGroup borderColor={inputBorder[colorMode]}>
                   <Textarea
-                    placeholder="Type you email text here."
+                    placeholder="What are you thinking?"
                     aria-label="Email body"
                     name="body"
+                    value={formBody}
                     onChange={handleChange}
-                    rows={9}
+                    rows={5}
                   />
                 </InputGroup>
               </FormControl>
