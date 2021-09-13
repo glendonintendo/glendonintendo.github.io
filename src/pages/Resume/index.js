@@ -30,7 +30,7 @@ function Resume() {
         </Text>
         <Text>
           MySQL, jQuery, Bootstrap, ChakraUI, Foundations, Git (Github),
-          Handlebars, Webpack, Redux, GitHub, Heroku, JSON,
+          Handlebars, Webpack, Redux, GitHub, Heroku, JSON
         </Text>
         <Text as="h2" fontWeight="semibold">
           Paradigms
