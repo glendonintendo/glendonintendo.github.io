@@ -10,16 +10,26 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 
+import { getProject } from "../../utils/getProjectData";
+
 function ProjectCard({
+  projectKey,
   title,
   deployedUrl,
   githubUrl,
   image,
   description,
   badges,
+  setProjectModalData,
+  onOpen
 }) {
   const { colorMode } = useColorMode();
   const bgColor = { light: "gray.200", dark: "gray.700" };
+
+  const handleProjectClick = () => {
+    setProjectModalData(getProject(projectKey));
+    onOpen();
+  }
 
   return (
     <Box
@@ -27,6 +37,7 @@ function ProjectCard({
       overflow="hidden"
       boxShadow="sm"
       bg={bgColor[colorMode]}
+      onClick={handleProjectClick}
     >
       <Image
         src={require(`../../assets/${image}`)?.default}
