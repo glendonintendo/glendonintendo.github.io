@@ -83,8 +83,8 @@ const projects = {
 
 export const getAllProjects = () => {
   return Object.values(projects);
-}
+};
 
 export const getProject = (key) => {
   return projects[key];
-}
+};
