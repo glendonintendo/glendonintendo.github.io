@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Flex, Box, Button, Stack } from "@chakra-ui/react";
+import { Flex, Box, Stack } from "@chakra-ui/react";
 
 function Nav() {
   return (
