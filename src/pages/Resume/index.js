@@ -2,7 +2,7 @@ import { Flex, Link, Text, Stack } from "@chakra-ui/react";
 
 function Resume() {
   return (
-    <Flex m="5vh auto" w="80%" fontSize="20px" align="center">
+    <Flex p="5vh 5vw" fontSize="20px" align="center" bgColor="primary.500">
       <Stack w="50%" textAlign="right" mr="20px" spacing="5">
         <Text>
           For a full list of my skills, proficiencies, and experience take a

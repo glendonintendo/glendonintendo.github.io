@@ -12,7 +12,13 @@ function Portfolio() {
 
   return (
     <>
-      <Grid templateColumns="repeat(3, 1fr)" mx="auto" w="90%" gap="25px">
+      <Grid
+        templateColumns="repeat(3, 1fr)"
+        px="5vw"
+        gap="25px"
+        py="5vh"
+        bgColor="primary.500"
+      >
         {projects.map((project) => (
           <ProjectCard
             projectKey={project.key}

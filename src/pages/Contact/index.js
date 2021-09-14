@@ -17,7 +17,6 @@ import {
   Input,
   Button,
   Textarea,
-  useColorMode,
   FormLabel,
   useToast,
 } from "@chakra-ui/react";
@@ -90,17 +89,9 @@ const Contact = () => {
       );
   };
 
-  const { colorMode } = useColorMode();
-  const inputBorder = { light: "gray.500", dark: "gray.200" };
-  const bgColor = { light: "gray.200", dark: "gray.700" };
-
   return (
-    <Flex justify="center" mt="5vh">
-      <Box
-        bg={bgColor[colorMode]}
-        w={["80vw", "60vw", "60vw", "60vw"]}
-        rounded="lg"
-      >
+    <Flex justify="center" py="5vh">
+      <Box w={["80vw", "60vw", "60vw", "60vw"]} rounded="lg" bgColor="gray.200">
         <Text as="h2" align="center" my="10px" fontSize="2xl" fontWeight="bold">
           Contact Me
         </Text>
@@ -109,7 +100,7 @@ const Contact = () => {
             <Stack spacing={3} width="40%" mx="auto" my="10px">
               <FormControl id="name" isRequired>
                 <FormLabel>Name:</FormLabel>
-                <InputGroup borderColor={inputBorder[colorMode]}>
+                <InputGroup borderColor="gray.500">
                   <InputLeftElement
                     children={<Icon as={IoInformationCircle} />}
                   />
@@ -125,7 +116,7 @@ const Contact = () => {
               </FormControl>
               <FormControl id="email" isRequired>
                 <FormLabel>Email:</FormLabel>
-                <InputGroup borderColor={inputBorder[colorMode]}>
+                <InputGroup borderColor="gray.500">
                   <InputLeftElement children={<Icon as={IoMail} />} />
                   <Input
                     type="email"
@@ -139,7 +130,7 @@ const Contact = () => {
               </FormControl>
               <FormControl>
                 <FormLabel>Phone:</FormLabel>
-                <InputGroup borderColor={inputBorder[colorMode]}>
+                <InputGroup borderColor="gray.500">
                   <InputLeftElement
                     children={<Icon as={IoPhonePortraitOutline} />}
                   />
@@ -158,7 +149,7 @@ const Contact = () => {
             <Stack spacing={3} width="50%" mx="auto" my="10px">
               <FormControl isRequired>
                 <FormLabel>Subject:</FormLabel>
-                <InputGroup borderColor={inputBorder[colorMode]}>
+                <InputGroup borderColor="gray.500">
                   <Input
                     type="text"
                     placeholder="Subject"
@@ -172,7 +163,7 @@ const Contact = () => {
 
               <FormControl isRequired>
                 <FormLabel>Email Body:</FormLabel>
-                <InputGroup borderColor={inputBorder[colorMode]}>
+                <InputGroup borderColor="gray.500">
                   <Textarea
                     placeholder="What are you thinking?"
                     aria-label="Email body"

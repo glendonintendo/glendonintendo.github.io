@@ -1,12 +1,6 @@
 import {
   Box,
-  Flex,
   Image,
-  Badge,
-  Text,
-  Stack,
-  LinkBox,
-  LinkOverlay,
 } from "@chakra-ui/react";
 
 import { getProject } from "../../utils/getProjectData";
@@ -14,11 +8,7 @@ import { getProject } from "../../utils/getProjectData";
 function ProjectCard({
   projectKey,
   title,
-  deployedUrl,
-  githubUrl,
   image,
-  description,
-  badges,
   setProjectModalData,
   onOpen,
 }) {
@@ -42,32 +32,6 @@ function ProjectCard({
         h="200px"
         w="100%"
       />
-      <Box p={5}>
-        <Stack isInline align="baseline">
-          {badges.map((badge) => (
-            <Badge variant="solid" variantColor="teal" rounded="full" px={2}>
-              {badge}
-            </Badge>
-          ))}
-        </Stack>
-        <Text as="h2" fontWeight="semibold" fontSize="xl" my={2}>
-          {title}
-        </Text>
-        <Text noOfLines={4} fontWeight="light" fontSize="md">
-          {description}
-        </Text>
-
-        <Flex justify="space-around">
-          <LinkBox>
-            <LinkOverlay href={githubUrl} isExternal />
-            GitHub Repo
-          </LinkBox>
-          <LinkBox>
-            <LinkOverlay href={deployedUrl} isExternal />
-            Deployed App
-          </LinkBox>
-        </Flex>
-      </Box>
     </Box>
   );
 }

@@ -1,4 +1,11 @@
-import { Flex, Box, Text, LinkBox, LinkOverlay, Icon } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  LinkBox,
+  LinkOverlay,
+  Icon,
+  HStack,
+} from "@chakra-ui/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function Footer() {
@@ -16,27 +23,23 @@ function Footer() {
   ];
 
   return (
-    <>
-      <Box w="100vw" padding="2vw 0 2vw 0">
-        <Text w="100vw" align="center" fontWeight="bold" fontSize="24px">
-          Want to Connect?
-        </Text>
-        <Flex justify="center" fontSize="20px" w="60%" mx="auto">
-          {media.map((medium, i) => (
-            <LinkBox mx="20px">
+    <Box padding="2vw 0 2vw 0">
+      <Text align="center" fontWeight="bold" fontSize="24px">
+        Want to Connect?
+      </Text>
+      <HStack justify="center" fontSize="20px" w="60%" mx="auto">
+        {media.map((medium, i) => (
+          <LinkBox mx="20px">
+            <HStack>
               <Icon as={medium.icon}></Icon>
               <LinkOverlay href={medium.url} isExternal>
                 {medium.label}
               </LinkOverlay>
-            </LinkBox>
-          ))}
-        </Flex>
-      </Box>
-
-      <Flex as="footer" h="2.5vw" align="center" justify="center">
-        <Text>Created and developed with ❤️ by Glen Eggers</Text>
-      </Flex>
-    </>
+            </HStack>
+          </LinkBox>
+        ))}
+      </HStack>
+    </Box>
   );
 }
 

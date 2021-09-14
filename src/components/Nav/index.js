@@ -3,12 +3,19 @@ import { Flex, Box, Stack } from "@chakra-ui/react";
 
 function Nav() {
   return (
-    <Flex w="100vw" align="center" justify="space-around" h="10vh">
-      <Box fontSize={["16px", "20px", "24px"]} fontWeight="bold">
+    <Flex
+      align="center"
+      justify="space-between"
+      h="10vh"
+      bgColor="tertiary.800"
+      color="secondary.500"
+    >
+      <Box fontSize={["20px", "36px", "36px"]} fontWeight="bold" px="5vw">
         <Link to="/">#glen</Link>
       </Box>
 
       <Stack
+        px="5vw"
         justify="center"
         align="center"
         isInline

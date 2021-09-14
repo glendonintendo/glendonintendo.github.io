@@ -2,7 +2,7 @@ import { Flex, Stack, Image, Text } from "@chakra-ui/react";
 
 function About() {
   return (
-    <Flex justify="center" align="center" my="5vh">
+    <Flex justify="center" align="center" py="5vh" bgColor="primary.500">
       <Image
         src={require("../../assets/profile-pic.jpg")?.default}
         alt="profile of Glen"
