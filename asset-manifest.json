@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/static/js/main.5bc10bcd.chunk.js",
-    "main.js.map": "/static/js/main.5bc10bcd.chunk.js.map",
+    "main.js": "/static/js/main.288d957b.chunk.js",
+    "main.js.map": "/static/js/main.288d957b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.45fd4047.js",
     "runtime-main.js.map": "/static/js/runtime-main.45fd4047.js.map",
     "static/js/2.33140ea3.chunk.js": "/static/js/2.33140ea3.chunk.js",
@@ -15,14 +15,14 @@
     "static/media/note-taker.png": "/static/media/note-taker.a53e2f48.png",
     "static/media/pizza-hunt.png": "/static/media/pizza-hunt.f2a26832.png",
     "static/media/profile-pic.jpg": "/static/media/profile-pic.3dbf94fa.jpg",
+    "static/media/resume.pdf": "/static/media/resume.a1eabc4a.pdf",
     "static/media/shop-shop.png": "/static/media/shop-shop.9bda567f.png",
     "static/media/sorting-visualizer.png": "/static/media/sorting-visualizer.6099caa2.png",
-    "static/media/tech-blog-dashboard.png": "/static/media/tech-blog-dashboard.5df6ca55.png",
-    "static/media/web-dev-resume.pdf": "/static/media/web-dev-resume.e6fc3978.pdf"
+    "static/media/tech-blog-dashboard.png": "/static/media/tech-blog-dashboard.5df6ca55.png"
   },
   "entrypoints": [
     "static/js/runtime-main.45fd4047.js",
     "static/js/2.33140ea3.chunk.js",
-    "static/js/main.5bc10bcd.chunk.js"
+    "static/js/main.288d957b.chunk.js"
   ]
 }
