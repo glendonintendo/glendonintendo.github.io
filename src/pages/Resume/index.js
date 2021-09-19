@@ -8,10 +8,7 @@ function Resume() {
           For a full list of my skills, proficiencies, and experience take a
           look at my resume.
         </Text>
-        <Link
-          href={require("../../assets/web-dev-resume.pdf")?.default}
-          isExternal
-        >
+        <Link href={require("../../assets/resume.pdf")?.default} isExternal>
           Click here to download!
         </Link>
       </Stack>
